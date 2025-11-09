@@ -78,5 +78,34 @@ class practice{
 TC = O(N)
 SC = O(1)
 
+// Method 3:
+ import java.util.*;
+class practice{
+  public static int[] function(int[] arr){
+    int n = arr.length;
+    int counter=0;
+    for(int i=0;i<n;i++){
+      if(arr[i]!=0)
+       arr[counter++] = arr[i];
+    }
+    for(int i = counter; i<n; i++){
+      arr[i] = 0; 
+    }
+  
+    return arr;
+}
+  public static void main(String args[]) {
+    Scanner sc = new Scanner(System.in);
+    int[] arr = {6,0,1,8,0,2};
 
+    int[] result = function(arr);
+    for (int i = 0; i < result.length; i++) {
+      System.out.print(result[i] + " ");
+    }
+  }
+}
+
+TC = O(N)
+SC = O(1)
+This approach Preserves relative order of non-zero elements and is the most efficient in both time and space
  
